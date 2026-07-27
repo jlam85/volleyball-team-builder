@@ -1,18 +1,23 @@
 VOLLEYBALL TEAM BUILDER - CHANGELOG
 ===================================
 
-Version 1.1 - July 27, 2026
+Version 1.2 - July 27, 2026
 ---------------------------
-Changes from the original Version 1 release:
+- Locked Version 1.1 behavior as the baseline.
+- Expanded player ratings from 1.0-5.0 to 1.0-6.0.
+- Added optional M, F, or blank designation to player maintenance.
+- Added optional strength tags: Passer, Defender, Setter, Attacker, Blocker, Hustle.
+- Added Tier 1 optimizer preferences: Defender, Passer, Attacker.
+- Added lower-weight Tier 2 preferences: Hustle, Setter, Blocker.
+- Added pre-publish coverage checks for all six tags.
+- Added pre-publish Coed visual check when a team contains at least one player designated F.
+- Coed status is shown for organizer review and is not included in published results.
+- Retained rating balance, 3-player +0.25 soft guideline, team locks, rolling 1-10 session history, and consecutive-session teammate avoidance.
+- Increased optimizer candidate evaluation and allows modest rating flexibility to improve Tier 1 coverage and history separation.
+- Added migration defaults for Version 1.1 players and backups.
+- Updated service-worker caching to Version 1.2 with network-first page navigation.
 
-1. Player maintenance
-   - Last name is now optional when adding or editing a player.
-   - Players without a last name display using first name only.
-   - Players with a last name continue to display as first name plus last initial outside the maintenance screen.
-
-2. Session history
-   - The History Sessions Used setting can now be selected from 1 through 10 sessions.
-   - The app stores up to 10 published sessions.
-   - When an 11th session is published, the oldest stored session is automatically purged.
-   - Team generation uses the number of prior sessions selected in Settings.
-   - The immediately previous session retains the strongest repeat-teammate avoidance preference.
+Version 1.1
+-----------
+- Last name optional.
+- Select 1-10 history sessions and retain up to 10.

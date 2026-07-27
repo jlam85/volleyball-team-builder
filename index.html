@@ -1,37 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#17324d"><meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Volley Teams">
-<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon.svg">
-<link rel="stylesheet" href="styles.css"><title>Volley Team Builder</title>
-</head>
-<body>
-<div id="gate" class="overlay hidden"><form id="unlockForm" class="gate-card"><h1>Volley Team Builder</h1><p id="gateText">Enter the app passcode.</p><input id="unlockCode" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Passcode" required><button>Unlock</button><p class="fine">This is a convenience lock on this device, not server-grade security.</p></form></div>
-<header><div><h1>Volley Team Builder</h1><p id="statusLine">Ready</p></div><button id="installBtn" class="secondary hidden">Install</button></header>
-<nav><button data-tab="session" class="active">Session</button><button data-tab="teams">Teams</button><button data-tab="players">Players</button><button data-tab="settings">Settings</button></nav>
-<main>
-<section id="session" class="tab active">
- <div class="toolbar"><label>Courts tonight <select id="courts"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label><span><b id="selectedCount">0</b> selected</span></div>
- <div class="toolbar compact"><button id="selectAll" class="secondary">Select all</button><button id="clearAll" class="secondary">Clear</button></div>
- <div id="playerChecks" class="player-grid"></div>
- <div class="sticky-actions"><button id="createTeams">Create balanced teams</button></div>
-</section>
-<section id="teams" class="tab">
- <div id="teamNotice" class="notice">Select players on the Session tab, then create teams.</div>
- <div id="teamGrid" class="team-grid"></div>
- <div class="sticky-actions split"><button id="reshuffle" class="secondary">Reshuffle unlocked</button><button id="publish">Publish</button></div>
-</section>
-<section id="players" class="tab">
- <form id="playerForm" class="card form-grid"><input id="firstName" placeholder="First name" required><input id="lastName" placeholder="Last name (optional)"><label>Rating <input id="rating" type="number" min="1" max="5" step="0.1" value="3.0" required></label><input id="editId" type="hidden"><button id="savePlayer">Add player</button><button id="cancelEdit" type="button" class="secondary hidden">Cancel</button></form>
- <div class="toolbar"><button id="exportBtn" class="secondary">Export backup</button><label class="button secondary">Import backup<input id="importFile" type="file" accept="application/json" hidden></label></div>
- <div id="rosterList" class="roster-list"></div>
-</section>
-<section id="settings" class="tab">
- <div class="card settings"><label>3-player skill adjustment <input id="threeAdj" type="number" min="0" max="1" step="0.05" value="0.25"></label><p class="fine">Balancing guideline: prefer a 3-player team's average to be about this much higher than a 4/5-player team; this is not a hard constraint.</p><label>History sessions used <select id="historyDepth"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></label><button id="saveSettings">Save settings</button><hr><h2>App passcode</h2><input id="newCode" type="password" inputmode="numeric" placeholder="New passcode"><button id="setCode">Set / change passcode</button><button id="removeCode" class="danger">Remove passcode</button><hr><button id="clearHistory" class="danger">Clear team history</button></div>
-</section>
-</main>
-<div id="publishView" class="publish hidden"><div class="publish-head"><h1>Volleyball Teams</h1><button id="closePublish" class="secondary">Back</button></div><div id="publishedTeams" class="published-grid"></div><p class="screenshot-note">Screenshot this screen to share.</p></div>
-<div id="toast" class="toast hidden"></div>
-<script src="app.js"></script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#173f5f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Volley Teams"><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="styles.css"><title>Volley Team Builder</title></head><body>
+<div id="gate" class="overlay hidden"><form id="unlockForm" class="gate"><h1>Volley Team Builder</h1><input id="unlockCode" type="password" placeholder="Passcode" required><button>Unlock</button></form></div>
+<header><div><h1>Volley Team Builder</h1><small id="status">Version 1.2</small></div></header><nav><button data-tab="session" class="active">Session</button><button data-tab="teams">Teams</button><button data-tab="players">Players</button><button data-tab="settings">Settings</button></nav><main>
+<section id="session" class="tab active"><div class="toolbar"><label>Courts <select id="courts"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label><b><span id="selectedCount">0</span> selected</b></div><div class="toolbar left"><button id="selectAll" class="secondary">Select all</button><button id="clearAll" class="secondary">Clear</button></div><div id="playerChecks" class="player-grid"></div><div class="bottom"><button id="createTeams">Create balanced teams</button></div></section>
+<section id="teams" class="tab"><div id="teamNotice" class="notice">Select players, then create teams.</div><div id="availability" class="notice hidden"></div><div id="teamGrid" class="team-grid"></div><div class="bottom split"><button id="reshuffle" class="secondary">Reshuffle unlocked</button><button id="publish">Publish</button></div></section>
+<section id="players" class="tab"><form id="playerForm" class="card form-grid"><input id="firstName" placeholder="First name" required><input id="lastName" placeholder="Last name (optional)"><label>Rating<input id="rating" type="number" min="1" max="6" step="0.1" value="3.0" required></label><label>Designation<select id="gender"><option value="">Blank</option><option value="M">M</option><option value="F">F</option></select></label><fieldset><legend>Strength tags</legend><div id="tagInputs" class="chips"></div></fieldset><input id="editId" type="hidden"><button id="savePlayer">Add player</button><button id="cancelEdit" type="button" class="secondary hidden">Cancel</button></form><div class="toolbar"><button id="exportBtn" class="secondary">Export backup</button><label class="button secondary">Import backup<input id="importFile" type="file" accept="application/json" hidden></label></div><div id="rosterList"></div></section>
+<section id="settings" class="tab"><div class="card settings"><label>3-player adjustment<input id="threeAdj" type="number" min="0" max="1" step="0.05" value="0.25"></label><label>History sessions used<select id="historyDepth"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></label><button id="saveSettings">Save settings</button><hr><h2>Passcode</h2><input id="newCode" type="password" placeholder="New passcode"><button id="setCode">Set / change</button><button id="removeCode" class="danger">Remove</button><hr><button id="clearHistory" class="danger">Clear history</button></div></section></main>
+<div id="publishView" class="publish hidden"><div class="publish-head"><h1>Volleyball Teams</h1><button id="closePublish" class="secondary">Back</button></div><div id="publishedTeams" class="published-grid"></div></div><div id="toast" class="toast hidden"></div><script src="app.js"></script></body></html>
