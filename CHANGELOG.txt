@@ -1,0 +1,18 @@
+VOLLEYBALL TEAM BUILDER - CHANGELOG
+===================================
+
+Version 1.1 - July 27, 2026
+---------------------------
+Changes from the original Version 1 release:
+
+1. Player maintenance
+   - Last name is now optional when adding or editing a player.
+   - Players without a last name display using first name only.
+   - Players with a last name continue to display as first name plus last initial outside the maintenance screen.
+
+2. Session history
+   - The History Sessions Used setting can now be selected from 1 through 10 sessions.
+   - The app stores up to 10 published sessions.
+   - When an 11th session is published, the oldest stored session is automatically purged.
+   - Team generation uses the number of prior sessions selected in Settings.
+   - The immediately previous session retains the strongest repeat-teammate avoidance preference.
