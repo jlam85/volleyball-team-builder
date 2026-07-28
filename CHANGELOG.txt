@@ -1,47 +1,19 @@
 VOLLEYBALL TEAM BUILDER - CHANGELOG
 ===================================
 
-Version 1.3 - July 28, 2026
----------------------------
-- Added mouse and touch/pointer drag-and-drop on unlocked team rosters.
-- Drop on a team to move a player; drop on another player to swap.
-- Team averages, Coed status, core-player coverage, and tag checks update immediately.
-- Temporary team sizes outside 3-5 are allowed while manually editing.
+Version 1.3.1 - July 28, 2026
+-----------------------------
+- Direct full package rebuilt from the Version 1.3 baseline requested by the user.
+- Header and runtime status label both show Version 1.3.1.
+- Added passcode compatibility for both historical hash prefixes used during earlier iterations.
+- A successful alternate-format passcode login is automatically normalized to the canonical passcode format.
+- Preserved the Version 1.3 drag-and-drop team editing behavior.
+- Preserved move and swap behavior for unlocked teams.
+- Preserved temporary team sizes outside 3-5 while manually editing.
 - Lock and Publish reject teams outside 3-5 players.
 - Reshuffle rejects temporary invalid team sizes.
-- Replaced visible Tier labels with one Tags section.
-- Reordered tags: Passer, Hustle, Defender, Setter, Attacker, Blocker.
-- Matching engine now strongly targets at least two distinct core-tagged players per team.
-- Ranked core tag coverage: Passer, then Hustle, then Defender.
-- Ranked nice-to-have coverage: Setter, then Attacker, then Blocker.
-- Preserved Version 1.2.1 passcode compatibility, storage, backup format, history, publishing privacy, court logic, and rating logic.
-
-VOLLEYBALL TEAM BUILDER - CHANGELOG
-===================================
-
-Version 1.2.1 - July 27, 2026
------------------------------
-- Restored compatibility with passcodes created in Version 1.1.
-- Bumped the cache identifier to force the corrected script to load.
-- Existing roster and history remain unchanged.
-
-Version 1.2 - July 27, 2026
----------------------------
-- Locked Version 1.1 behavior as the baseline.
-- Expanded player ratings from 1.0-5.0 to 1.0-6.0.
-- Added optional M, F, or blank designation to player maintenance.
-- Added optional strength tags: Passer, Defender, Setter, Attacker, Blocker, Hustle.
-- Added Tier 1 optimizer preferences: Defender, Passer, Attacker.
-- Added lower-weight Tier 2 preferences: Hustle, Setter, Blocker.
-- Added pre-publish coverage checks for all six tags.
-- Added pre-publish Coed visual check when a team contains at least one player designated F.
-- Coed status is shown for organizer review and is not included in published results.
-- Retained rating balance, 3-player +0.25 soft guideline, team locks, rolling 1-10 session history, and consecutive-session teammate avoidance.
-- Increased optimizer candidate evaluation and allows modest rating flexibility to improve Tier 1 coverage and history separation.
-- Added migration defaults for Version 1.1 players and backups.
-- Updated service-worker caching to Version 1.2 with network-first page navigation.
-
-Version 1.1
------------
-- Last name optional.
-- Select 1-10 history sessions and retain up to 10.
+- Preserved Tags display with tag order: Passer, Hustle, Defender, Setter, Attacker, Blocker.
+- Preserved matching engine priorities targeting at least two distinct core-tagged players per team.
+- Preserved Coed visual check, team averages, tag checks, and published-view privacy.
+- Preserved rating scale 1.0-6.0, optional last name, M/F/blank designation, backup/import, 1-10 history setting, and 10-session retention.
+- Service-worker cache set to volley-v1.3.1.
