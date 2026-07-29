@@ -1,6 +1,23 @@
 VOLLEYBALL TEAM BUILDER - CHANGELOG
 ===================================
 
+Version 1.4 - July 29, 2026
+---------------------------
+- Changed drag-and-drop from swap behavior to move-only behavior.
+- Dropping over any part of an unlocked destination team moves the dragged player into that team.
+- Unlocked teams may temporarily contain any number of players, including zero.
+- Empty teams remain visible and show a Drop players here target.
+- Team average, Coed status, core-player count, and Tags update after every move.
+- Finalized teams may contain 2-5 players.
+- Lock and Publish reject teams with fewer than 2 or more than 5 players.
+- Reshuffle rejects unlocked teams outside 2-5 players.
+- Initial generation now supports 2-player teams while retaining an even team count and selected-court limit.
+- Added visual-viewport synchronization for the Teams action bar so Reshuffle and Publish remain anchored to the bottom of the visible iOS screen.
+- Preserved Version 1.3.1 passcode compatibility, IndexedDB storage, ratings, tags, history, backup/import, and publishing privacy.
+
+VOLLEYBALL TEAM BUILDER - CHANGELOG
+===================================
+
 Version 1.3.1 - July 28, 2026
 -----------------------------
 - Direct full package rebuilt from the Version 1.3 baseline requested by the user.
