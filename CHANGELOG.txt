@@ -1,6 +1,23 @@
 VOLLEYBALL TEAM BUILDER - CHANGELOG
 ===================================
 
+Version 1.5 - August 5, 2026
+----------------------------
+- Added tap-to-move player workflow with a persistent destination-team tray for mobile.
+- Retained desktop drag as an optional shortcut.
+- Rebuilt reshuffle to pool all players from unlocked teams and redistribute them across the existing unlocked team slots, regardless of temporary roster sizes.
+- Removed published-session history storage, history settings, and all history penalties from matching.
+- Publish now validates and displays final teams without retaining the result.
+- Added imported-roster filename, file-modified timestamp, and actual import timestamp.
+- Added compact roster date under the app version and detailed import metadata on the Players tab.
+- Roster metadata updates only after successful import and marks local player edits.
+- Redesigned Players tab to show roster first with Filters and Add New actions.
+- Added multi-select filters for name, rating bands, designation, tags, tag match mode, assessment completeness, and current-session selection.
+- Preserved Version 1.4 rating, tag, Coed, locking, publishing, passcode, storage, and iOS action-bar behavior.
+
+VOLLEYBALL TEAM BUILDER - CHANGELOG
+===================================
+
 Version 1.4 - July 29, 2026
 ---------------------------
 - Changed drag-and-drop from swap behavior to move-only behavior.
