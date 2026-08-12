@@ -1,13 +1,10 @@
-# Volleyball Team Builder — Version 1
+# Volleyball Team Builder 1.5.1
 
 ## Confirmed rules
 - Select 1–4 available courts for each session.
-- Use a 1.0–5.0 player rating scale in 0.1 increments.
-- Always create an even number of teams so every team has an opponent.
-- Teams are 3–5 players; the app prefers the greatest practical number of simultaneous teams allowed by the court count.
-- A 3-player team is guided toward an average about 0.25 above a 4/5-player team, but this is a soft optimization preference rather than a hard rule.
-- Keep a rolling history of the last three published sessions.
-- Strongly discourage teammate repeats from the immediately previous session and lightly discourage repeats from sessions two and three.
+- Use a 1.0–10.0 player rating scale in 0.1 increments.
+- Teams are 2–5 players; the app prefers the greatest practical number of simultaneous teams allowed by the court count.
+- A 2- to 3-player team is guided toward an average about 0.25 above a 4/5-player team, but this is a soft optimization preference rather than a hard rule.
 - Published results show teams only—no ratings, averages, or court assignments.
 
 ## Recommended free hosting: GitHub Pages
