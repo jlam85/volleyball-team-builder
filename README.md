@@ -1,4 +1,11 @@
-# Volleyball Team Builder 1.5.1
+# Volleyball Team Builder 1.5.2
+
+## Version 1.5.2
+- Repairs the player add/edit/remove workflow that was broken by malformed JavaScript in 1.5.1.
+- Corrects the 5.x, 6.x, and 9.0–10.0 rating filters.
+- Escapes roster data before rendering it as HTML.
+- Uses revision numbers when recovering local state and preserves a rolling history of the last 50 published sessions.
+- Adds automated syntax and manifest validation for future changes.
 
 ## Confirmed rules
 - Select 1–4 available courts for each session.
